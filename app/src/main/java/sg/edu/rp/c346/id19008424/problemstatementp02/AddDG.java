@@ -45,14 +45,15 @@ public class AddDG extends AppCompatActivity {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Get the text from the radio button
                 int selectedId = radioGroup.getCheckedRadioButtonId();
                 if (selectedId != -1){
                     radioButtonGrade = (RadioButton) findViewById(selectedId);
                     String selectedGrade = radioButtonGrade.getText().toString();
+
+
                     Intent i = new Intent();
-
-
-                    i.putExtra("grade", selectedGrade);
+                    i.putExtra("grade", "" + selectedGrade);
 //                    DailyGrade newGrade = new DailyGrade(selectedGrade);
                     setResult(RESULT_OK, i);
 //                    Toast.makeText(AddDG.this, selectedGrade, Toast.LENGTH_LONG).show();

@@ -20,6 +20,7 @@ public class InfoActivity extends AppCompatActivity {
     ArrayAdapter aa;
     Button btnEmail, btnAdd, btnInfo;
 
+    int addButton = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,7 +71,7 @@ public class InfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent =  new Intent(InfoActivity.this, AddDG.class);
-                startActivity(intent);
+                startActivityForResult(intent, addButton);
             }
         });
 
@@ -87,7 +88,9 @@ public class InfoActivity extends AppCompatActivity {
                 // Get data passed back from 2nd activity
                 String grade = data.getStringExtra("grade");
                 String statement = "";
-                Toast.makeText(InfoActivity.this, grade, Toast.LENGTH_LONG).show();
+               // Toast.makeText(InfoActivity.this, grade, Toast.LENGTH_LONG).show();
+                alDG.add(new DailyGrade(grade));
+                aa.notifyDataSetChanged();
             }
         }
     }

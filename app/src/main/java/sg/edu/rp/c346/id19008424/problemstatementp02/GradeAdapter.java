@@ -17,7 +17,7 @@ public class GradeAdapter extends ArrayAdapter {
     private Context context;
     private TextView tvTitle, tvGrade;
     private Button btnShare;
-    
+
 
     public GradeAdapter(Context context, int resource, ArrayList<DailyGrade> objects){
         super(context, resource, objects);
