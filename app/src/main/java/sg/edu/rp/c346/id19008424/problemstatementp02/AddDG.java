@@ -22,6 +22,7 @@ public class AddDG extends AppCompatActivity {
     RadioButton radioButtonGrade;
     RadioGroup radioGroup;
     int getRequestCodeForGrade = 1;
+    String week = "";
 
 
     @Override
@@ -35,6 +36,9 @@ public class AddDG extends AppCompatActivity {
 
        radioGroup = (RadioGroup) findViewById(R.id.gradeGroup);
 
+        Intent i = getIntent();
+        week = i.getStringExtra("week");
+        tvWeek.setText("Week " + week );
 //        int selectedId = radioGroup.getCheckedRadioButtonId();
 //
 //        radioButtonGrade = (RadioButton) findViewById(selectedId);

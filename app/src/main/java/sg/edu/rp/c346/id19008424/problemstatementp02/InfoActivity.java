@@ -71,6 +71,7 @@ public class InfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent =  new Intent(InfoActivity.this, AddDG.class);
+                intent.putExtra("week", "" + (alDG.size()+1));
                 startActivityForResult(intent, addButton);
             }
         });
