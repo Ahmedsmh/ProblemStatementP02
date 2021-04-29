@@ -17,9 +17,7 @@ public class GradeAdapter extends ArrayAdapter {
     private Context context;
     private TextView tvTitle, tvGrade;
     private Button btnShare;
-
-    Integer i = 1;
-
+    
 
     public GradeAdapter(Context context, int resource, ArrayList<DailyGrade> objects){
         super(context, resource, objects);
@@ -50,7 +48,7 @@ public class GradeAdapter extends ArrayAdapter {
         //  We get back the food at the same index.
         DailyGrade currentGrade = grade.get(position);
         // Set the TextView to show the food
-        tvTitle.setText("Week " + (i++));
+        tvTitle.setText("Week " + (position + 1));
         tvGrade.setText(currentGrade.getGrade());
 
 

@@ -28,5 +28,7 @@ public class InfoActivity extends AppCompatActivity {
         lv.setAdapter(aa);
 
 
+
+
     }
 }
