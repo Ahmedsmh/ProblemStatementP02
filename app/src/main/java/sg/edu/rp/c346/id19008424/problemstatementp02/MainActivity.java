@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent =  new Intent(MainActivity.this, InfoActivity.class);
-                intent.putExtra("holiday", modules.get(position));
+                intent.putExtra("module", modules.get(position));
                 startActivity(intent);
 
 
