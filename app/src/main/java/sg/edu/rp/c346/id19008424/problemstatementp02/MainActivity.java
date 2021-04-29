@@ -35,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent =  new Intent(MainActivity.this, SecondActivity.class);
                 intent.putExtra("holiday", modules.get(position));
                 startActivity(intent);
+
+
+
             }
         });
 
