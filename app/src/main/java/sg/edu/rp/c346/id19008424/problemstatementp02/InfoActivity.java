@@ -18,7 +18,7 @@ public class InfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
-        lv = (ListView) findViewById(R.id.ListViewGrades);
+        lv  = findViewById(R.id.ListViewGrades);
         alDG = new ArrayList<>();
         alDG.add(new DailyGrade("B"));
         alDG.add(new DailyGrade("C"));
