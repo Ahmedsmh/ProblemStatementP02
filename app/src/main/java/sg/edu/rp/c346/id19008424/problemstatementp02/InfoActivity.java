@@ -1,5 +1,6 @@
 package sg.edu.rp.c346.id19008424.problemstatementp02;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -67,10 +69,27 @@ public class InfoActivity extends AppCompatActivity {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent =  new Intent(InfoActivity.this, AddDG.class);
+                startActivity(intent);
             }
         });
 
 
     }
+
+        @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        // Only hande when 2nd activity closed normally
+        //  and data contalins something
+        if(resultCode == RESULT_OK){
+            if(data != null){
+                // Get data passed back from 2nd activity
+                String grade = data.getStringExtra("grade");
+                String statement = "";
+                Toast.makeText(InfoActivity.this, grade, Toast.LENGTH_LONG).show();
+            }
+        }
+    }
 }
+
